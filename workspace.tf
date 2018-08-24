@@ -7,4 +7,7 @@ resource "tfe_workspace" "ws" {
       oauth_token_id = "${var.oauth_token}"
       ingress_submodules = true
   }
+  depends_on = [
+    "github_repository.repo"
+  ]
 }
