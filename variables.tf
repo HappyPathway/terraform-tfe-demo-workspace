@@ -3,14 +3,6 @@ variable "aws_vars" {
     description = "Flag for setting AWS Environment Variables"
 }
 
-variable "aws_access_key_id" {
-  default = ""
-}
-
-variable "aws_secret_access_key" {
-  default = ""
-}
-
 variable "aws_default_region" {
   default = "us-east-1"
 }
