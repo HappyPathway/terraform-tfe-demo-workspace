@@ -52,3 +52,7 @@ variable "github_org" {
 variable "organization" {
   
 }
+
+variable "vault_gcp_credentials_path" {
+  
+}
