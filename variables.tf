@@ -54,5 +54,5 @@ variable "organization" {
 }
 
 variable "vault_gcp_credentials_path" {
-  
+  default = "secret/credentials/gcp"
 }
