@@ -1,5 +1,5 @@
 resource "tfe_workspace" "ws" {
-  name = "${var.repo_name}"
+  name = "${var.workspace_name}"
   organization = "${var.organization}"
   vcs_repo = {
       identifier = "${var.github_org}/${var.repo_name}"
