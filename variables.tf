@@ -56,3 +56,9 @@ variable "organization" {
 variable "vault_gcp_credentials_path" {
   default = "secret/credentials/gcp"
 }
+
+variable "create_repo" {
+    default = false
+    type = "string"
+    description = "Create Github Repo?"
+}
