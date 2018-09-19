@@ -62,3 +62,8 @@ variable "create_repo" {
     type = "string"
     description = "Create Github Repo?"
 }
+
+variable "workspace_name" {
+    type = "string"
+    description = "Name of TFE Workspace"
+}
