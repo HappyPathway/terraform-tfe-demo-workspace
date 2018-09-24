@@ -14,9 +14,9 @@ data "vault_generic_secret" "gcp" {
 
 resource "tfe_variable" "gcp_credentials" {
     count = "${var.gcp_vars ? 1 : 0}"
-    key = "GOOGLE_CREDENTIALS"
+    key = "gcp_credentials"
     value = "${data.vault_generic_secret.gcp.data["json"]}"
-    category = "env"
+    category = "terraform"
     workspace_id = "${tfe_workspace.ws.id}"
     sensitive = true
 }
