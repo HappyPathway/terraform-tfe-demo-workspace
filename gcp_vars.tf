@@ -1,3 +1,17 @@
+variable "vault_gcp_credentials_path" {
+  default = "secret/credentials/gcp"
+}
+
+variable "gcp_vars" {
+  description = "Flag for setting GCP Environment Variables"
+  default = false
+  type = "string"
+}
+
+data "vault_generic_secret" "gcp" {
+    path = "${var.vault_gcp_credentials_path}"
+}
+
 resource "tfe_variable" "gcp_credentials" {
     count = "${var.gcp_vars ? 1 : 0}"
     key = "GOOGLE_CREDENTIALS"

@@ -1,3 +1,16 @@
+variable "vault_vars" {
+    default = false
+    description = "Flag for setting Vault Vars"
+}
+
+variable "vault_addr" {
+    default = ""
+}
+
+variable "vault_token" {
+  default = ""
+}
+
 resource "tfe_variable" "VAULT_ADDR" {
   count = "${var.vault_vars ? 1 : 0}"
   key = "VAULT_ADDR"

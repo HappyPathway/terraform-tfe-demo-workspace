@@ -1,3 +1,16 @@
+variable "azure_vars" {
+  default = false
+  description = "Flag for setting Azure Environment Variables"
+}
+
+variable "vault_azure_credentials_path" {
+  default = "secret/credentials/azure"
+}
+
+data "vault_generic_secret" "azure" {
+    path = "${var.vault_azure_credentials_path}"
+}
+
 resource "tfe_variable" "ARM_SUBSCRIPTION_ID" {
   count = "${var.azure_vars ? 1 : 0}"
   key = "ARM_SUBSCRIPTION_ID"
