@@ -9,6 +9,7 @@ variable "aws_default_region" {
 
 variable "azure_vars" {
   default = false
+  description = "Flag for setting Azure Environment Variables"
 }
 
 variable "confirm_destroy" {
@@ -55,4 +56,10 @@ variable "organization" {
 
 variable "vault_gcp_credentials_path" {
   
+}
+
+variable "gcp_vars" {
+  description = "Flag for setting GCP Environment Variables"
+  default = false
+  type = "string"
 }
