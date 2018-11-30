@@ -16,7 +16,7 @@ resource "tfe_variable" "VAULT_ADDR" {
   key = "VAULT_ADDR"
   value = "${var.vault_addr}"
   category = "env"
-  workspace_id = "${local.workspace["id"]}"
+  workspace_id = "${local.workspace_id}"
   sensitive = true
 }
 
@@ -25,6 +25,6 @@ resource "tfe_variable" "VAULT_TOKEN" {
   key = "VAULT_TOKEN"
   value = "${var.vault_token}"
   category = "env"
-  workspace_id = "${local.workspace["id"]}"
+  workspace_id = "${local.workspace_id}"
   sensitive = true
 }

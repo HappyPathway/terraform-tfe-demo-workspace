@@ -3,6 +3,6 @@ resource "tfe_variable" "CONFIRM_DESTROY" {
   key = "CONFIRM_DESTROY"
   value = "1"
   category = "env"
-  workspace_id =  "${local.workspace["id"]}"
+  workspace_id =  "${local.workspace_id}"
   sensitive = true
 }

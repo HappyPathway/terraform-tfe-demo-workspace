@@ -17,7 +17,7 @@ resource "tfe_variable" "gcp_credentials" {
     key = "gcp_credentials"
     value = "${data.vault_generic_secret.gcp.data["json"]}"
     category = "terraform"
-    workspace_id = "${local.workspace["id"]}"
+    workspace_id = "${local.workspace_id}"
     sensitive = true
 }
 
@@ -27,6 +27,6 @@ resource "tfe_variable" "GOOGLE_PROJECT" {
     key = "GOOGLE_PROJECT"
     value = "${data.vault_generic_secret.gcp.data["project_id"]}"
     category = "env"
-    workspace_id = "${local.workspace["id"]}"
+    workspace_id = "${local.workspace_id}"
     sensitive = true
 }

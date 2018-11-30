@@ -23,7 +23,7 @@ resource "tfe_variable" "AWS_ACCESS_KEY_ID" {
   key = "AWS_ACCESS_KEY_ID"
   value = "${data.vault_aws_access_credentials.creds.access_key}"
   category = "env"
-  workspace_id = "${local.workspace["id"]}"
+  workspace_id = "${local.workspace_id}"
 }
 
 resource "tfe_variable" "AWS_SECRET_ACCESS_KEY" {
@@ -31,7 +31,7 @@ resource "tfe_variable" "AWS_SECRET_ACCESS_KEY" {
   key = "AWS_SECRET_ACCESS_KEY"
   value = "${data.vault_aws_access_credentials.creds.secret_key}"
   category = "env"
-  workspace_id = "${local.workspace["id"]}"
+  workspace_id = "${local.workspace_id}"
   sensitive = true
 }
 
@@ -40,6 +40,6 @@ resource "tfe_variable" "AWS_DEFAULT_REGION" {
   key = "AWS_DEFAULT_REGION"
   value = "${var.aws_default_region}"
   category = "env"
-  workspace_id = "${local.workspace["id"]}"
+  workspace_id = "${local.workspace_id}"
   sensitive = true
 }
