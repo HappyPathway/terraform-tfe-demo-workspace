@@ -1,4 +1,5 @@
-resource "tfe_workspace" "ws" {
+resource "tfe_workspace" "ws_repo" {
+  count = "${var.bind_repo ? 1 : 0}"
   name = "${var.workspace_name}"
   organization = "${var.organization}"
   vcs_repo = {
@@ -7,6 +8,15 @@ resource "tfe_workspace" "ws" {
       oauth_token_id = "${var.oauth_token}"
       ingress_submodules = true
   }
+  depends_on = [
+    "github_repository.repo"
+  ]
+}
+
+resource "tfe_workspace" "ws_no_repo" {
+  count = "${var.bind_repo ? 0 : 1}"
+  name = "${var.workspace_name}"
+  organization = "${var.organization}"
   depends_on = [
     "github_repository.repo"
   ]
