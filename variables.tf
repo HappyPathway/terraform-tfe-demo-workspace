@@ -6,6 +6,9 @@ variable "repo_name" {
   
 }
 
+variable "repo_description" {
+    default = "Terraform Infrastructure Repository"
+}
 variable "repo_branch" {
     default = "master"
 }

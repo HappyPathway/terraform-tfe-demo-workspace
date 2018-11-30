@@ -21,3 +21,7 @@ resource "tfe_workspace" "ws_no_repo" {
     "github_repository.repo"
   ]
 }
+
+locals {
+  workspace = "${var.bind_repo ? element(tfe_workspace.ws_repo, 0) : element(tfe_workspace.ws_no_repo, 0)}"
+}

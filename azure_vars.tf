@@ -16,7 +16,7 @@ resource "tfe_variable" "ARM_SUBSCRIPTION_ID" {
   key = "ARM_SUBSCRIPTION_ID"
   value = "${data.vault_generic_secret.azure.data["subscription_id"]}"
   category = "env"
-  workspace_id = "${tfe_workspace.ws.id}"
+  workspace_id = "${local.workspace.id}"
   sensitive = true
 }
 
@@ -25,7 +25,7 @@ resource "tfe_variable" "ARM_CLIENT_SECRET" {
   key = "ARM_CLIENT_SECRET"
   value = "${data.vault_generic_secret.azure.data["client_secret"]}"
   category = "env"
-  workspace_id = "${tfe_workspace.ws.id}"
+  workspace_id = "${local.workspace.id}"
   sensitive = true
 }
 
@@ -34,7 +34,7 @@ resource "tfe_variable" "ARM_CLIENT_ID" {
   key = "ARM_CLIENT_ID"
   value = "${data.vault_generic_secret.azure.data["client_id"]}"
   category = "env"
-  workspace_id = "${tfe_workspace.ws.id}"
+  workspace_id = "${local.workspace.id}"
   sensitive = true
 }
 
